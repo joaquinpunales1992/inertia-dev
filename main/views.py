@@ -11,7 +11,7 @@ def home(request):
 # Initialize the Llama model
 llm = Llama.from_pretrained(
     repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF",
-    filename="*q4_K_M.gguf",
+    filename="qwen2-0_5b-instruct-q4_0.gguf",
     verbose=False,
     max_seq_len=512
 )
