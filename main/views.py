@@ -3,18 +3,33 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from llama_cpp import Llama
-
+import asyncio
 
 def home(request):
     return render(request, "hello.html")
 
+
+
 # Initialize the Llama model
-llm = Llama.from_pretrained(
-    repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF",
-    filename="qwen2-0_5b-instruct-q4_0.gguf",
-    verbose=False,
-    max_seq_len=512
-)
+async def load_model():
+    loop = asyncio.get_running_loop()
+    return await loop.run_in_executor(
+        None, 
+        lambda: Llama.from_pretrained(
+            repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF",
+            filename="qwen2-0_5b-instruct-q4_0.gguf",
+            verbose=False,
+            max_seq_len=512
+        )
+    )
+
+async def main():
+    print("Loading model asynchronously...")
+    llm = await load_model()
+    print("Model loaded!")
+
+
+asyncio.run(main())
 
 @csrf_exempt
 def chat(request):
