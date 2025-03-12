@@ -3,37 +3,35 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from llama_cpp import Llama
+import threading
 import asyncio
 
 def home(request):
     return render(request, "hello.html")
 
+llm = None  # Global variable for the model
 
-
-# Initialize the Llama model
-async def load_model():
-    loop = asyncio.get_running_loop()
-    return await loop.run_in_executor(
-        None, 
-        lambda: Llama.from_pretrained(
-            repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF",
-            filename="qwen2-0_5b-instruct-q4_0.gguf",
-            verbose=False,
-            max_seq_len=512
-        )
-    )
-
-async def main():
-    print("Loading model asynchronously...")
+# Load model in a separate thread (Django is synchronous by default)
+def load_model_sync():
     global llm
-    llm = await load_model()
+    llm = Llama.from_pretrained(
+        repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF",
+        filename="qwen2-0_5b-instruct-q4_0.gguf",
+        verbose=False,
+        max_seq_len=512
+    )
     print("Model loaded!")
 
-
-asyncio.run(main())
+# Run model loading in a separate thread
+threading.Thread(target=load_model_sync, daemon=True).start()
 
 @csrf_exempt
 def chat(request):
+    global llm
+
+    if llm is None:
+        return JsonResponse({"error": "Model is still loading, please try again later."}, status=503)
+
     if request.method == "POST":
         try:
             data = json.loads(request.body)
@@ -46,11 +44,12 @@ def chat(request):
             "We are representing a software company."
             "Provide concise and relevant responses regarding project proposals and company capabilities."
             "We create custom Web Applications, AI integrations, Machine learning solutions for businesses, chatbots, recommendation systems, and more." 
-            "if the user wants to contact us, please redirect them to our contact page."
-            "Always talk about US/Our not I/my"
+            "If the user wants to contact us, please redirect them to our contact page."
+            "Always talk about US/Our not I/my."
             "We develop software in Python (Django)."
-            "Our main clients are: Australian museum, University of Sydney, Art gallery of South Australia and more"
+            "Our main clients are: Australian Museum, University of Sydney, Art Gallery of South Australia, and more."
         )
+
         # Construct the prompt
         prompt = f"{domain_context}\nUser: {user_message}\nBot:"
 
