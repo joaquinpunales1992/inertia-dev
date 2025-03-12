@@ -9,12 +9,12 @@ def home(request):
     return render(request, "hello.html")
 
 # Initialize the Llama model
-# llm = Llama.from_pretrained(
-#     repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF",
-#     filename="*q8_0.gguf",
-#     verbose=False,
-#     max_seq_len=512
-# )
+llm = Llama.from_pretrained(
+    repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF",
+    filename="*q4_K_M.gguf",
+    verbose=False,
+    max_seq_len=512
+)
 
 @csrf_exempt
 def chat(request):
