@@ -26,6 +26,7 @@ SECRET_KEY = "django-insecure-9sztiznb2zqu_nvldrzydd-hzjc%abafd-+1x18e5uqc324ppg
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "127.0.0.1",
     "mysite-jxa3.onrender.com",
 ]
 
@@ -46,6 +47,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
