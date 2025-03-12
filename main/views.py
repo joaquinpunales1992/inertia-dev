@@ -25,6 +25,7 @@ async def load_model():
 
 async def main():
     print("Loading model asynchronously...")
+    global llm
     llm = await load_model()
     print("Model loaded!")
 
