@@ -30,7 +30,7 @@ def chat(request):
     global llm
 
     if llm is None:
-        return JsonResponse({"error": "Model is still loading, please try again later."}, status=503)
+        print("Model is still loading, please try again later.")
 
     if request.method == "POST":
         try:
