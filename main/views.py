@@ -14,9 +14,8 @@ llm = None  # Global variable for the model
 # Load model in a separate thread (Django is synchronous by default)
 def load_model_sync():
     global llm
-    llm = Llama.from_pretrained(
-        repo_id="Qwen/Qwen2-0.5B-Instruct-GGUF",
-        filename="qwen2-0_5b-instruct-q4_0.gguf",
+    llm = Llama(
+        model_path="qwen2-0_5b-instruct-q4_0.gguf",  
         verbose=False,
         max_seq_len=512
     )
