@@ -2,7 +2,7 @@ from django.shortcuts import render
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from llama_cpp import Llama
+# from llama_cpp import Llama
 import threading
 import asyncio
 
