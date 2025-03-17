@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "mysite-jxa3.onrender.com",
     "https://inertia-dev.simplifiedbites.com/",
+    "inertia.simplifiedbites.com",
 ]
 
 
@@ -55,7 +56,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "inertia_dev.urls"
+ROOT_URLCONF = "urls"
 
 TEMPLATES = [
     {
@@ -73,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "inertia_dev.wsgi.application"
+WSGI_APPLICATION = "wsgi.application"
 
 
 # Database
