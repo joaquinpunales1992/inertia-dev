@@ -55,7 +55,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "inertia_dev.urls"
+ROOT_URLCONF = "urls"
 
 TEMPLATES = [
     {
@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "inertia_dev.wsgi.application"
+WSGI_APPLICATION = "wsgi.application"
 
 
 # Database
