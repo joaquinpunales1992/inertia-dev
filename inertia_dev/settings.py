@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "mysite-jxa3.onrender.com",
+    "https://inertia-dev.simplifiedbites.com/",
 ]
 
 
