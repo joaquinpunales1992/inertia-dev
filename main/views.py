@@ -4,7 +4,6 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-
 import threading
 
 def home(request):
