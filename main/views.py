@@ -2,10 +2,8 @@ from django.shortcuts import render
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-import spacy
+from thefuzz import process
 
-# Load NLP model
-nlp = spacy.load("en_core_web_sm")
 
 # Define chatbot intents and responses
 INTENTS = {
@@ -23,25 +21,30 @@ RESPONSES = {
 }
 
 def detect_intent(user_message):
-    doc = nlp(user_message)
+    best_match = None
+    best_score = 0
+    
     for intent, keywords in INTENTS.items():
-        for keyword in keywords:
-            if keyword in user_message:
-                return intent
-    return None
+        match, score = process.extractOne(user_message, keywords)
+        if score > best_score:
+            best_match = intent
+            best_score = score
+    
+    return best_match if best_score > 70 else None  # Threshold for intent detection
+
 
 def home(request):
     return render(request, "hello.html")
 
 
 @csrf_exempt
-def chatbot(request):
+def chat(request):
     if request.method == "POST":
         try:
             data = json.loads(request.body)
             user_message = data.get("message", "").lower()
             
-            # Detect intent using NLP
+            # Detect intent using fuzzy matching
             intent = detect_intent(user_message)
             if intent:
                 return JsonResponse({"response": RESPONSES[intent]})
