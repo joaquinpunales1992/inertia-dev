@@ -7,17 +7,17 @@ from thefuzz import process
 
 # Define chatbot intents and responses
 INTENTS = {
-    "website": ["website", "web development", "build site"],
+    "website": ["website", "web development", "build site", "web application"],
     "app": ["app", "mobile app", "application"],
     "AI": ["AI", "artificial intelligence", "machine learning"],
     "pricing": ["price", "cost", "budget"],
 }
 
 RESPONSES = {
-    "website": "We can help build your website! What features do you need?",
+    "website": "We can help build your website! <input type='submit' value='Book a 30-minute call for FREE' class='button primary'/>",
     "app": "Are you looking for a mobile or web application?",
-    "AI": "We specialize in AI solutions! What problem are you trying to solve?",
-    "pricing": "Our pricing depends on project complexity. Can you describe your requirements? <a href='#contact'>Book a 30 min call for Free</a>",
+    "AI": "We specialize in AI solutions! What problem are you trying to solve? <input type='submit' value='Book a 30-minute call for FREE' class='button primary'/>",
+    "pricing": "Our pricing depends on project complexity. <input type='submit' value='Book a 30-minute call for FREE' class='button primary'/>",
 }
 
 def detect_intent(user_message):
