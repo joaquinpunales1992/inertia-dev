@@ -17,7 +17,7 @@ RESPONSES = {
     "website": "We can help build your website! What features do you need?",
     "app": "Are you looking for a mobile or web application?",
     "AI": "We specialize in AI solutions! What problem are you trying to solve?",
-    "pricing": "Our pricing depends on project complexity. Can you describe your requirements?",
+    "pricing": "Our pricing depends on project complexity. Can you describe your requirements? <a href='#contact'>Book a 30 min call for Free</a>",
 }
 
 def detect_intent(user_message):
