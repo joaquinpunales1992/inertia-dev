@@ -13,11 +13,12 @@ INTENTS = {
     "pricing": ["price", "cost", "budget"],
 }
 
+
 RESPONSES = {
-    "website": "We can help build your website! <input type='submit' value='Book a 30-minute call for FREE' class='button primary'/>",
+    "website": "We can help build your website! <input type='submit' value='Book a 30-minute call for FREE' class='small'/>",
     "app": "Are you looking for a mobile or web application?",
-    "AI": "We specialize in AI solutions! What problem are you trying to solve? <input type='submit' value='Book a 30-minute call for FREE' class='button primary'/>",
-    "pricing": "Our pricing depends on project complexity. <input type='submit' value='Book a 30-minute call for FREE' class='button primary'/>",
+    "AI": "We specialize in AI solutions! What problem are you trying to solve? <input type='submit' value='Book a 30-minute call for FREE' class='small'/>",
+    "pricing": "Our pricing depends on project complexity. <input type='submit' value='Book a 30-minute call for FREE' class='small'/>",
 }
 
 def detect_intent(user_message):
