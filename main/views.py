@@ -30,7 +30,7 @@ def detect_intent(user_message):
             best_match = intent
             best_score = score
     
-    return best_match if best_score > 70 else None  # Threshold for intent detection
+    return best_match if best_score > 70 else None
 
 
 def home(request):
