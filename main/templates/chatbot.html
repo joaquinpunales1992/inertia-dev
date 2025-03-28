@@ -7,23 +7,23 @@
     #chat-container {
       width: 1000px;
       margin: 10px auto;
-      border: 1px solid #ccc;
+      border: 3px solid #ccc;
       padding: 10px;
       background-color: #ffffff00;
       border-radius: 5px;
     }
     #messages {
+      text-align: left;
       height: 500px;
       overflow-y: auto;
-      border: 1px solid #ddd;
+      border: 3px solid #ddd;
       padding: 10px;
       margin-bottom: 10px;
-      text-align: left;
       background-color: #00000000;
     }
     .message { margin-bottom: 10px; }
-    .user { font-weight: bold; }
-    .bot { color: blue; }
+    .user { font-weight: bold; color: black; }
+    .inertiaDev { font-weight: bold; color: purple; }
     #user-input {
       width: 96.8%;
       padding: 10px;
@@ -64,10 +64,10 @@
         contentType: 'application/json',
         data: JSON.stringify({ "message": userMessage }),
         success: function(response) {
-          addMessage('inertia Dev', response.response);
+          addMessage('inertiaDev', response.response);
         },
         error: function(xhr, status, error) {
-          addMessage('inertia Dev', 'Error: ' + error);
+          addMessage('inertiaDev', 'Error: ' + error);
         }
       });
     }
