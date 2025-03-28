@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+/*
+	Ethereal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Page */
+
+	body {
+		overflow-x: scroll;
+	}
+
+/* Wrapper */
+
+	body.is-preload #wrapper {
+		-moz-transform: none;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		opacity: 1;
+=======
 /*
 	Helios by HTML5 UP
 	html5up.net | @ajlkn
@@ -14,4 +36,5 @@
 
 	body.homepage.is-preload #header:after {
 		opacity: 0;
+>>>>>>> refs/remotes/origin/main
 	}
