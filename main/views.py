@@ -13,7 +13,6 @@ INTENTS = {
     "pricing": ["price", "cost", "budget"],
 }
 
-
 RESPONSES = {
     "website": "We can help build your website! <input type='submit' value='Book a 30-minute call for FREE' class='small'/>",
     "app": "Are you looking for a mobile or web application?",
