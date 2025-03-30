@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   {% compress js file %}
-    <script src="{% static 'assets/js/jquery.min.js' %}" defer></script>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
   {% endcompress %}
   <style>
     body { font-family: Arial, sans-serif; background-color: #00000000; }
@@ -51,6 +51,7 @@
     }
 
     #user-input {
+      color: black;
       font-size: 14px;
       padding: 8px;
     }

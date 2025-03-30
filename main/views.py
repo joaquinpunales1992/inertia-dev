@@ -24,17 +24,17 @@ INTENTS = {
 }
 
 RESPONSES = {
-    "greeting": "Hello! Do you have a project in mind? ",
-    "website": "We can help you build your website! <input type='submit' value='Book a 30-minute call for FREE' class='small'/>",
+    "greeting": "Hello. Do you have a project in mind?",
+    "website": "We can help you build your web application <input type='submit' value='Book a 30-minute call for FREE' onclick=window.location='#call' class='small scrolly'/>",
     "app": "Are you looking for a mobile or web application?",
-    "AI": "We specialize in AI solutions! What problem are you trying to solve? <input type='submit' value='Book a 30-minute call for FREE' class='small'/>",
-    "pricing": "Our pricing depends on project complexity. <input type='submit' value='Book a 30-minute call for FREE' class='small'/>",
-    "portfolio": "We have a diverse portfolio! <input type='submit' value='Check out our Clients section' class='small'/>",
-    "contact": "Just fill the contact form and we'll get back to you! <input type='submit' value='Contact Us' class='small'/>",
+    "AI": "We specialize in AI solutions! What problem are you trying to solve? <input type='submit' value='Book a 30-minute call for FREE' onclick=window.location='#call' class='small scrolly'/>",
+    "pricing": "Our pricing depends on project complexity. <input type='submit' value='Book a 30-minute call for FREE' onclick=window.location='#call' class='button small scrolly'/>",
+    "portfolio": "We have a diverse portfolio! <input type='submit' value='Check out our Clients section' onclick=window.location='#call' class='small scrolly'/>",
+    "contact": "Just fill the contact form and we'll get back to you! <input type='submit' value='Contact Us' onclick=window.location='#call' class='small scrolly'/>",
     "about": "We are a team of passionate Software Engineers! What is your project about?",
-    "location": "We've been working remotely since 2018! So don't worry we get you cover",
+    "location": "We've been working remotely since 2018, so don't worry—we've got you covered.",
     "hours": "We work 24/7! So you can reach us anytime.",
-    "services": "We offer web development, API development and AI solutions  <input type='submit' value='Book a 30-minute call for FREE' class='small'/>",
+    "services": "We offer web development, API development, and AI solutions, among other services. <input type='submit' value='Book a 30-minute call for FREE' onclick=window.location='#call' class='small scrolly'/>",
     "thanks": "You're welcome! If you have any more questions, feel free to ask.",
     "goodbye": "Goodbye! Have a great day!",
 }
