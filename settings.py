@@ -88,10 +88,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    BASE_DIR / "inertia_dev/main/static/",
+    BASE_DIR / "inertia4/main/static/",
 ]
 
-STATIC_ROOT = BASE_DIR / "inertia_dev/staticfiles"
+STATIC_ROOT = BASE_DIR / "inertia4/staticfiles"
 
 COMPRESS_ROOT = STATIC_ROOT
 STATICFILES_FINDERS = [
