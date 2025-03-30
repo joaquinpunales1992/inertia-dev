@@ -94,6 +94,10 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / "inertia_dev/staticfiles"
 
 COMPRESS_ROOT = STATIC_ROOT
-STATICFILES_FINDERS = ['compressor.finders.CompressorFinder']
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder'
+]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
