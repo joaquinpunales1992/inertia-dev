@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "compressor",
     "main",
 ]
 
@@ -87,5 +88,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+STATIC_ROOT = BASE_DIR / "static"
+
+COMPRESS_ROOT = STATIC_ROOT
+STATICFILES_FINDERS = ['compressor.finders.CompressorFinder']
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
