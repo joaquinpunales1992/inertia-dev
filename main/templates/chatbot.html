@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   {% compress js file %}
-    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.min.js' %}" defer></script>
   {% endcompress %}
   <style>
     body { font-family: Arial, sans-serif; background-color: #00000000; }
