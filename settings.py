@@ -87,9 +87,11 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = [
+    BASE_DIR / "inertia_dev/main/static/",
+]
 
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "inertia_dev/staticfiles"
 
 COMPRESS_ROOT = STATIC_ROOT
 STATICFILES_FINDERS = ['compressor.finders.CompressorFinder']
